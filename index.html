@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Translator</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        padding: 40px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      textarea, select, button {
+        width: 100%;
+        max-width: 500px;
+        margin: 10px auto;
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      textarea {
+        height: 100px;
+        resize: none;
+      }
+
+      button {
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      button:hover {
+        background-color: #1e40af;
+      }
+
+      #statusMessage {
+        text-align: center;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>My Translator</h2>
+
+    <textarea id="inputText" placeholder="Write something here"></textarea>
+
+    <select id="fromLang">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="mr">Marathi</option>
+    </select>
+
+    <select id="toLang">
+      <option value="hi">Hindi</option>
+      <option value="en">English</option>
+      <option value="mr">Marathi</option>
+    </select>
+
+    <button onclick="translateText()">Translate</button>
+
+    <p id="statusMessage"></p>
+
+    <textarea
+      id="outputText"
+      placeholder="Translated text will appear here"
+      readonly
+    ></textarea>
+
+    <button onclick="copyText()">Copy Translation</button>
+
+    <script>
+      async function translateText() {
+        const inputText = document.getElementById("inputText").value;
+        const fromLang = document.getElementById("fromLang").value;
+        const toLang = document.getElementById("toLang").value;
+        const status = document.getElementById("statusMessage");
+        const output = document.getElementById("outputText");
+
+        if (inputText.trim() === "") {
+          status.innerText = "Please enter text to translate.";
+          return;
+        }
+
+        status.innerText = "Translating… Please wait.";
+        output.value = "";
+
+        try {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
+          inputText
+        )}&langpair=${fromLang}|${toLang}&de=api@mymemory.translated.net`;
+
+          const response = await fetch(url);
+          const data = await response.json();
+
+          output.value = data.responseData.translatedText;
+          status.innerText = "Translation completed.";
+        } catch (error) {
+          status.innerText = "Translation failed. Please try again.";
+        }
+      }
+
+      function copyText() {
+        const output = document.getElementById("outputText");
+        output.select();
+        document.execCommand("copy");
+        alert("Translated text copied!");
+      }
+    </script>
+  </body>
+</html>

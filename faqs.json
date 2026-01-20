@@ -1,0 +1,63 @@
+[
+    {
+        "question": "What is your return policy?",
+        "answer": "You can return any product within 30 days with a receipt."
+    },
+    {
+        "question": "Do you offer international shipping?",
+        "answer": "Yes, we ship worldwide. Shipping charges may vary by location."
+    },
+    {
+        "question": "How can I track my order?",
+        "answer": "After your order is shipped, you will receive a tracking number via email."
+    },
+    {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept credit/debit cards, UPI, PayPal, and net banking."
+    },
+    {
+        "question": "Can I cancel or modify my order?",
+        "answer": "You can cancel or modify your order within 24 hours of placing it."
+    },
+    {
+        "question": "How long does shipping take?",
+        "answer": "Shipping usually takes 3-7 business days depending on your location."
+    },
+    {
+        "question": "Do you offer discounts or promo codes?",
+        "answer": "Yes, check our website or newsletter for ongoing promotions and promo codes."
+    },
+    {
+        "question": "How can I contact customer support?",
+        "answer": "You can email support@example.com or call 123-456-7890."
+    },
+    {
+        "question": "Is my personal information secure?",
+        "answer": "Yes, we use industry-standard encryption to protect your data."
+    },
+    {
+        "question": "Can I return a product without a receipt?",
+        "answer": "Returns without a receipt may be accepted at the discretion of our support team."
+    },
+    {
+        "question": "Do you ship on weekends or holidays?",
+        "answer": "No, we only ship on business days (Monday to Friday)."
+    },
+    {
+        "question": "What should I do if I receive a damaged product?",
+        "answer": "Please contact our customer support immediately for a replacement or refund."
+    },
+    {
+        "question": "How do I reset my account password?",
+        "answer": "Go to the login page and click 'Forgot Password' to reset it via email."
+    },
+    {
+        "question": "Are gift cards available for purchase?",
+        "answer": "Yes, gift cards can be purchased online in various amounts."
+    },
+    {
+        "question": "How can I subscribe or unsubscribe from newsletters?",
+        "answer": "You can manage your subscription at the bottom of any newsletter email."
+    }
+]
+
